@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'content.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+<style>
+    @media (max-width: 650px) {
+        .h-title {
+            width: 100%;
+            text-align: center;
+            left: 0%;
+        }
+
+        .h-info {
+            right: 0%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-card {
+            width: 26rem !important;
+            display: block !important;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .Detail-view {
+            display: block;
+        }
+
+        .Product-image {
+            width: 70%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .Product-block {
+        }
+    }
+</style>
+
+
+<script>
+    function OpenForm() {
+        document.getElementById("popup-form").style.display = "block";
+        document.getElementById("open").style.display = "none";
+    }
+    function CloseForm() {
+        document.getElementById("popup-form").style.display = "none";
+        document.getElementById("open").style.display = "block";
+    }
+
+    var LoginCount = 0;
+</script>
+
+</html>

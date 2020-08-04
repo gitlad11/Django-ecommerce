@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Littletech{% endblock %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<div class="background">
+    <div class="bg-wrapper">
+        <h2 style="text-align: center;">YOUR CHOICE:</h2>
+        <div class="container-fluid  categories d-flex">
+            <div class="category">
+                <a href="#">
+                    <img class="c-image" src="{% static 'images/icons8-apple.png' %}">
+                    <h5>apple</h5>
+                </a>
+            </div>
+            <div class="category">
+                <a href="#">
+                    <img class="c-image" src="{% static 'images/icons8-linux.png' %}">
+                    <h5>linux</h5>
+                </a>
+            </div>
+            <div class="category">
+                <a href="#">
+                    <img class="c-image" src="{% static 'images/icons8-windows.png' %}">
+                    <h5>windows</h5>
+                </a>
+            </div>
+        </div>
+        <div class="container bg-white content">
+
+            <form class="form search-form">
+                <input class="input search-input"><button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+            {% for Product in Products %}
+            <div class="card product-card" style="margin:10px; width: 18rem;">
+                <img class="card-img-top" src="{{ Product.image.url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ Product.title }}</h5>
+                    <p class="card-text">{{ Product.description }}</p>
+                    <p class="text-muted">{{ Product.price }} $
+                    {% if Product.discount %}
+                    <span style="color:red; font-size: 20px;"> - {{ Product.discount|upper }} $</span>
+                    {% endif %}
+                    </p>
+                    <a href="{{ Product.get_absolute_url }}" class="btn btn-primary">More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script> 
+</script>
+{% endblock %}

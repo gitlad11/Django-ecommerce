@@ -1,0 +1,66 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ Product.title }}{% endblock %}
+{% block content %}
+{% include 'header.html' %}
+<div class="background">
+    <div class="bg-wrapper">
+        <div class="container bg-white Detail-view">
+            <img class="Product-image" src="{{ product.image.url }}" />
+            <div class="Product-block">
+                <h1 class="Product-title">{{ product.title }}</h1>
+                <p class="Product-text">{{ product.description }}</p>
+                <h4 class="Product-price">
+                    {{ product.price }}$
+                    {% if product.discount %}
+                    <p class="Product-discount">- {{ product.discount }}$</p>
+                    {% endif %}
+                </h4>
+                <p style="font-size:30px; text-align:justify;">{{ product.total_price }} $</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .header-bg {
+        background-image: url("{% static 'images/background.jpg' %}")
+    }
+
+    .Product-image {
+        margin: 30px;
+        box-shadow: 0 3px 15px rgb(0, 255, 33);
+    }
+
+        .Product-image:hover {
+            transition: 0.6s ease;
+            transform: skewX(2deg);
+        }
+
+    .Product-price:hover {
+        transform: translate(5px,5px);
+        transition: 0.4s ease;
+    }
+
+    .Detail-view {
+        display: flex;
+    }
+
+    .Product-discount {
+        color: red;
+    }
+</style>
+
+<script>
+    function OpenForm() {
+        document.getElementById("popup-form").style.display = "block";
+        document.getElementById("open").style.display = "none";
+    }
+    function CloseForm() {
+        document.getElementById("popup-form").style.display = "none";
+        document.getElementById("open").style.display = "block";
+    }
+
+    var LoginCount = 0;
+</script>
+{% endblock %}

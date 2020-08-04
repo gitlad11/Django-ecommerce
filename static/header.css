@@ -1,0 +1,83 @@
+.header-bg{
+height: 500px;
+background-image: url('images/header.jpeg');
+background-size: cover;
+-webkit-box-shadow: 1px 8px 11px 2px rgba(129, 0, 114, 0.33);
+-moz-box-shadow: 1px 8px 11px 2px rgba(129, 0, 114, 0.33);
+box-shadow: 1px 8px 11px 2px rgba(129, 0, 114, 0.33);
+}
+.wrapper{
+position: relative;
+background: rgba(55,55,55,0.5);
+height: 100%;
+background-size: cover;
+}
+.wrapper:hover{
+background: rgba(55,55,55,0.2);
+transition: 0.6s linear;
+}
+
+.buttons{
+border-radius: 10px;
+border: 1px solid black;
+}
+.heading{
+padding: 8px;
+text-transform: uppercase;
+width: 50%;
+background: rgba(7,7,7, 0.5);
+color: white;
+}
+.h-title{
+ position:absolute;
+    left: 30%;
+    top: 30%;
+}
+.h-info{
+text-align: right;
+position:absolute;
+    top: 70%;
+    right: 30%;
+}
+.navbar-dark{
+background: rgba(7,7,7, 0.5);
+}
+.login-btn{
+position: absolute;
+left: 0;
+top: 20px;
+margin: 5px;
+}
+.reg-btn{
+position:absolute;
+right: 0;
+top:20px;
+margin: 5px;    
+}
+.popup-form{
+position: absolute;
+left: 0;
+top:15px;
+margin: 10px;
+}
+input{
+border-radius: 4px;
+box-shadow: 2px 4px 8px rgba(129, 0, 114, 0.50);
+width: 200px;
+}
+input:focus{
+ transform : scaleX(1.05);
+}
+.avatar{
+text-align: center;
+align-content: center;
+}
+.avatar-img{
+border: 3px solid purple;
+border-bottom: 0;
+border-radius: 100%;
+}
+.avatar-img:hover{
+border-color: red;
+transition: 0.7s ease;
+}

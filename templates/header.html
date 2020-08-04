@@ -1,0 +1,48 @@
+{% load static %}
+<div class="header-bg">
+    <div class="container-fluid wrapper">
+
+    <div class="navbar navbar-dark">
+
+        <button id="open" onclick="OpenForm()" class="login-btn btn btn-outline-danger">Login</button>
+
+    <div id="popup-form" style="display:none;" class="popup-form">
+        <form method="post" class=" form form-group">
+            {% if form.error %}
+            <p style="text-transform: capitalize; color:red; margin-left: 10px; margin-right:10px;">{{ error }}</p>
+            {% endif %}
+            {% csrf_token %}
+            {% for field in form %}
+            {{ field }}
+            {% endfor %}
+            <button formmethod="post" class="btn btn-outline-success" type="submit">submit</button>
+            <button onclick="CloseForm()" class="btn btn-outline-danger">Cancel</button>
+        </form>
+    </div>
+        {% if User.is_authenticated %}
+        <div class="avatar">
+            <a href="#"><img class="avatar-img" src="{% static 'images/icons8-customer.png' %}"></a>
+            <h6 style="color: white;">
+                Name
+                <p>efimovi420@mail.com</p>
+            </h6>
+        </div>
+        {% endif %}
+        <button class="reg-btn  btn btn-outline-success">Registration</button>
+    </div>
+
+    <div class="heading h-title">
+        <h1>We will make you to progress</h1>
+        <p>we have a present for you <a href="#">join us!</a></p>
+    </div>
+    <div class="heading h-info">
+        <h2>try now!</h2>
+        <p>we sell all for you to feel comfortable and productive.</p>
+    </div>
+    </div>
+</div>
+
+<style>    .navbar-dark {
+        min-height: 130px;
+    }
+</style>

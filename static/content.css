@@ -1,0 +1,50 @@
+
+.background{
+background-image: url(images/heading.jpg);
+background-size: cover;
+height: 2000px;
+border-top: 2px solid black;
+}
+.bg-wrapper{
+background: rgba(55,55,55,0.2);
+height: 100%;
+}
+.bg-wrapper h2{
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.categories{
+border-top: 2px solid black;
+border-bottom: 2px solid black;
+justify-content: center;
+background: rgba(55,55,55,0.6)
+}
+.category{
+height: 100px;
+width: 100px;
+margin: 20px;
+margin-left: 50px;
+text-align: center;
+text-shadow: 13px 12px 1px rgba(255, 0, 100, 0.6);
+}
+.category a{
+text-decoration: none;
+color: white;
+}
+.category a:hover{
+color: #EE82EE;
+text-decoration: none;
+}
+.c-image{
+height: 80px;
+width: 80px;
+}
+.category:hover{
+transform: scale(1.1);
+}
+.search-form{
+	margin: 2px;
+}
+.content{
+	height: 100%;
+}
